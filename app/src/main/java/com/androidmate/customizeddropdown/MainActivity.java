@@ -14,7 +14,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     Spinner spCustom;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,13 +21,16 @@ public class MainActivity extends AppCompatActivity {
 
         Spinner spinnerCustom = (Spinner) findViewById(R.id.spinnerCustom);
         // Spinner Drop down elements
-        ArrayList<String> languages = new ArrayList<String>();
+        ArrayList<String> languages = new ArrayList<>();
         languages.add("Andorid");
         languages.add("IOS");
         languages.add("PHP");
         languages.add("Java");
         languages.add(".Net");
+
+
         CustomSpinnerAdapter customSpinnerAdapter = new CustomSpinnerAdapter(MainActivity.this, languages);
+        // Setting Custom Adapter to Spinner
         spinnerCustom.setAdapter(customSpinnerAdapter);
 
         spinnerCustom.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
